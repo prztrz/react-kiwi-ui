@@ -15,9 +15,15 @@ const colors = {
   error: "#D02228",
 };
 
+const additionalVariants = {
+  bold: "font-weight: bold;",
+  normal: "",
+};
+
 type Props = {
   size: "large" | "small" | "normal",
   type: "primary" | "secondary" | "attention" | "error",
+  variant: "bold" | "normal",
   children: React.Node,
 };
 
@@ -29,6 +35,7 @@ const Typography = (props: Props) => (
         font-family: Roboto, -apple-system, sans-serif;
         font-size: ${sizes[props.size]}px;
         color: ${colors[props.type]};
+        ${additionalVariants[props.variant]};
       }
     `}</style>
   </span>
